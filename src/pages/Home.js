@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import ActorGrid from "../components/actor/ActorGrid";
 import CustomRadio from "../components/CustomRadio";
 import MainPageLayout from "../components/MainPageLayout";
@@ -39,9 +39,9 @@ const Home = () => {
   //conditional rendering according to search text if the results ll be null
 
   //On change for radio buttons
-  const onRadioChange = (ev) => {
+  const onRadioChange = useCallback((ev) => {
     setSearchOption(ev.target.value);
-  };
+  }, []);
   console.log(searchOption);
 
   //Rendering Results
